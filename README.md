@@ -38,4 +38,4 @@ To see a working example of this plugin, demo.html has been provided as part of 
 
 Feel free to send me changes and improvements, or file an issue if you notice something isn't working as well as it should be.
 
-This is one of my first Open Source contribution, so be gentle with your feedback!
+This is one of my first Open Source contributions, so be gentle with your feedback!
