@@ -1,0 +1,1 @@
+(function(e){e.fn.onScreen=function(){var t={top:e(window).scrollTop(),left:e(window).scrollLeft()};t.right=t.left+e(window).width();t.bottom=t.top+e(window).height();var n=this.offset();n.right=n.left+this.outerWidth();n.bottom=n.top+this.outerHeight();return!(t.right<n.left||t.left>n.right||t.bottom<n.top||t.top>n.bottom)}})(jQuery)

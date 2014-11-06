@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery is Filled Plugin Demo by @danbetcher</title>
+    <style type="text/css">
+    .container { margin: 0 auto; width: 400px; }
+    
+    .control-group { padding: 10px 0px; zoom: 1; }
+    .control-group:before, .control-group:after { content: ""; display: table; }
+    .control-grcontrol-groupoup:after { clear: both; }
+    
+    label { float: left; width: 100px; margin-right: 20px; }
+    .results { float: right; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery is Filled Plugin Demo</h1>
+        <p>Check out the <a href="https://github.com/danbetcher/jquery-isfilled">jQuery is Filled Plugin project page on GitHub</a>.</p>
+    
+        <form>
+            <div class="control-group">
+                <label for="text">Text:</label>
+                <input id="text" class="required" type="text" value="">
+            </div>
+            <div class="control-group">
+                <label for="password">Password:</label>
+                <input id="password" class="required" type="password" value="">
+            </div>
+            <div class="control-group">
+                <label for="search">Search:</label>
+                <input id="search" class="required" type="search" value="">
+            </div>
+            <div class="control-group">
+                <label for="email">Email:</label>
+                <input id="email" class="required" type="email" value="">
+            </div>
+            <div class="control-group">
+                <label for="url">URL:</label>
+                <input id="url" class="required" type="url" value="">
+            </div>
+            <div class="control-group">
+                <label for="tel">Tel:</label>
+                <input id="tel" class="required" type="tel" value="">
+            </div>
+            <div class="control-group">
+                <label for="number">Number:</label>
+                <input id="number" class="required" type="number" value="">
+            </div>
+            <div class="control-group">
+                <label for="range">Range:</label>
+                <input id="range" class="required" type="range" value="">
+            </div>
+            <div class="control-group">
+                <label for="date">Date:</label>
+                <input id="date" class="required" type="date" value="">
+            </div>
+            <div class="control-group">
+                <label for="month">Month:</label>
+                <input id="month" class="required" type="month" value="">
+            </div>
+            <div class="control-group">
+                <label for="week">Week:</label>
+                <input id="week" class="required" type="week" value="">
+            </div>
+            <div class="control-group">
+                <label for="time">Time:</label>
+                <input id="time" class="required" type="time" value="">
+            </div>
+            <div class="control-group">
+                <label for="datetime">DateTime:</label>
+                <input id="datetime" class="required" type="datetime" value="">
+            </div>
+            <div class="control-group">
+                <label for="datetime-local">DateTime Local:</label>
+                <input id="datetime-local" class="required" type="datetime-local" value="">
+            </div>
+            <div class="control-group">
+                <label for="color">Color:</label>
+                <input id="color" class="required" type="color" value="">
+            </div>
+            <div class="control-group">
+                <label for="select">Select:</label>
+                <select id="select" class="required">
+                    <option value=""></option>
+                    <option value="A">Option A</option>
+                    <option value="B">Option B</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="radio">Radio:</label>
+                <input class="required" type="radio" name="radio" value="Option A">Option A 
+                <input class="required" type="radio" name="radio" value="Option B">Option B
+            </div>
+            <div class="control-group">
+                <label for="checkbox">Checkbox:</label>
+                <input class="required" type="checkbox" name="checkbox" value="Choice A">Choice A 
+                <input class="required" type="checkbox" name="checkbox" value="Choice B">Choice B
+            </div>
+            
+            <div class="control-group">
+                <label for="textarea">Textarea:</label>
+                <textarea id="textarea" class="required"></textarea>
+            </div>
+            <div class="control-group">
+                <p style="text-align: center">
+                    <button id="test_plugin">Test Plugin</button> 
+                    <button id="clear_results" value="clear results">Clear Results</button>
+                </p>
+            </div>
+        </form>
+    
+        <div id="results"></div>
+    </div>
+      
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery.isfilled.js"></script>
+    <script>
+    // &#x2713; checkmark
+    // &#x2717; x-mark
+    $(document).ready(function() {
+       $("#test_plugin").on("click", function(e) {
+           e.preventDefault();
+           
+           $("#clear_results").click();
+
+           $(".required").each(function() {
+               if ( $(this).isFilled() ) {
+                   $(this).parent(".control-group").prepend("\<span class='results' style='color: green;'>&#x2713;\</span> ");
+               } else {
+                   $(this).parent(".control-group").prepend("\<span class='results' style='color: red;'>&#x2717;\</span> ");
+               }
+           });
+           
+       });
+       
+       $("#clear_results").on("click", function(e) {
+           e.preventDefault();
+           $(".results").remove();
+       });
+    });
+    </script>
+</body>
+</html>
