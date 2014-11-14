@@ -1,4 +1,15 @@
-/*! https://github.com/danbetcher/jquery-isfilled by @danbetcher */
+/*
+ *	jQuery Is Filled Plugin
+ *
+ *	Copyright (c) Dan Betcher
+ *	https://www.twitter.com/danbetcher
+ *
+ *	Documentation:
+ *	https://github.com/danbetcher/jquery-isfilled
+ *
+ *	Licensed under the MIT license.
+ *	http://en.wikipedia.org/wiki/MIT_License
+ */
 ;(function($){
 	$.fn.isFilled = function(value) {
         //Collect the input object
